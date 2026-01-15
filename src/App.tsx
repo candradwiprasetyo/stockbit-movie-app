@@ -1,12 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import { MoviesPage } from "@/features/movies/pages/MoviesPage";
+import { MovieDetailPage } from "@/features/movies/pages/MovieDetailPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-2xl font-bold mb-4">Movies</h1>
-      <MoviesPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<MoviesPage />} />
+      <Route path="/movies/:id" element={<MovieDetailPage />} />
+    </Routes>
   );
-}
-
+};
 export default App;
