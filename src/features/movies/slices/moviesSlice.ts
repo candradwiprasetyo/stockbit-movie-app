@@ -8,6 +8,7 @@ const initialState: MoviesState = {
   error: null,
   page: 1,
   hasMore: true,
+  keyword: "movie",
 };
 
 export const fetchMovies = createAsyncThunk(
@@ -20,7 +21,14 @@ export const fetchMovies = createAsyncThunk(
 const moviesSlice = createSlice({
   name: "movies",
   initialState,
-  reducers: {},
+  reducers: {
+    setKeyword(state, action) {
+      state.keyword = action.payload;
+      state.page = 1;
+      state.movies = [];
+      state.hasMore = true;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchMovies.pending, (state) => {
@@ -44,5 +52,7 @@ const moviesSlice = createSlice({
       });
   },
 });
+
+export const { setKeyword } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

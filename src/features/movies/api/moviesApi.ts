@@ -20,7 +20,10 @@ export const fetchMoviesApi = async (
   });
 
   if (response.data.Response === "False") {
-    throw new Error(response.data.Error || "Failed to fetch movies");
+    return {
+      movies: [],
+      totalResults: 0,
+    };
   }
 
   return {

@@ -1,18 +1,21 @@
 import { useEffect, useRef, useCallback } from "react";
-import { fetchMovies } from "../slices/moviesSlice";
+import { fetchMovies, setKeyword } from "../slices/moviesSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
-
-const DEFAULT_KEYWORD = "movie";
 
 export const useMovies = () => {
   const dispatch = useAppDispatch();
-  const { movies, loading, error, page, hasMore } = useAppSelector(
+  const { movies, loading, error, page, hasMore, keyword } = useAppSelector(
     (state) => state.movies
   );
 
+  const hasFetched = useRef(false);
+
   useEffect(() => {
-    dispatch(fetchMovies({ keyword: DEFAULT_KEYWORD, page: 1 }));
-  }, [dispatch]);
+    if (hasFetched.current) return;
+    hasFetched.current = true;
+
+    dispatch(fetchMovies({ keyword, page: 1 }));
+  }, [dispatch, keyword]);
 
   const observer = useRef<IntersectionObserver | null>(null);
 
@@ -23,19 +26,30 @@ export const useMovies = () => {
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore && movies.length > 5) {
-          dispatch(fetchMovies({ keyword: DEFAULT_KEYWORD, page }));
+          dispatch(fetchMovies({ keyword, page }));
         }
       });
 
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore, dispatch, page, movies.length]
+    [loading, hasMore, dispatch, page, keyword, movies.length]
   );
+
+  const search = (value: string) => {
+    const nextKeyword = value || "movie";
+
+    if (nextKeyword === keyword) return;
+
+    dispatch(setKeyword(nextKeyword));
+    dispatch(fetchMovies({ keyword: nextKeyword, page: 1 }));
+  };
 
   return {
     movies,
     loading,
     error,
     lastMovieRef,
+    search,
+    keyword,
   };
 };

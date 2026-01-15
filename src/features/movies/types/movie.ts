@@ -19,4 +19,5 @@ export interface MoviesState {
   error: string | null;
   page: number;
   hasMore: boolean;
+  keyword: string;
 }
