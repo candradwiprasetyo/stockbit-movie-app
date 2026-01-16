@@ -9,7 +9,7 @@ export const Loading = ({
 }: LoadingProps) => {
   const containerClass = fullscreen
     ? "fixed inset-0 flex items-center justify-center bg-white/80 z-50"
-    : "flex items-center justify-center mt-4";
+    : "flex items-center justify-center mt-4 h-[80vh]";
 
   return (
     <div className={containerClass}>
