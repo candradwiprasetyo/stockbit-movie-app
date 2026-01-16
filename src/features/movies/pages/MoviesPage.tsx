@@ -9,7 +9,7 @@ export const MoviesPage = () => {
   const { movies, loading, error, lastMovieRef, search, keyword } = useMovies();
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4">
       <SearchInput onSearch={search} />
 
       {error && <ErrorMessage message={error} />}
