@@ -8,7 +8,7 @@ interface Props {
 
 export const MovieList = ({ movies, lastItemRef }: Props) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4">
       {movies.map((movie, index) => {
         const isLast = index === movies.length - 1;
 

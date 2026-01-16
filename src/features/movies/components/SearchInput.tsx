@@ -59,12 +59,18 @@ export const SearchInput = ({ onSearch }: Props) => {
     onSearch(title);
   };
 
+  const handleClear = () => {
+    setValue("");
+    setSuggestions([]);
+    onSearch("movie");
+  };
+
   return (
     <div ref={wrapperRef} className="relative mb-4">
       <TextField
         placeholder="Search movies..."
         value={value}
-        className="w-full"
+        className="w-full rounded-full border border-gray-500 py-4 px-6 text-2xl font-semibold"
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -73,6 +79,17 @@ export const SearchInput = ({ onSearch }: Props) => {
           }
         }}
       />
+
+      {value && (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200 transition cursor-pointer text-2xl"
+          aria-label="Clear search"
+        >
+          ✕
+        </button>
+      )}
 
       <SearchSuggestions
         items={suggestions}
