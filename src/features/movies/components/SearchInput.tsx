@@ -1,4 +1,7 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { fetchMoviesApi } from "../api/moviesApi";
+import type { Movie } from "../types/movie";
+import { SearchSuggestions } from "./SearchSuggestions";
 
 interface Props {
   onSearch: (value: string) => void;
@@ -6,28 +9,78 @@ interface Props {
 
 export const SearchInput = ({ onSearch }: Props) => {
   const [value, setValue] = useState("");
-  const isFirstRender = useRef(true);
+  const [suggestions, setSuggestions] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const timeoutRef = useRef<number | undefined>(undefined);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setSuggestions([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (!value.trim()) {
+      setSuggestions([]);
       return;
     }
 
-    const handler = setTimeout(() => {
-      onSearch(value);
-    }, 500);
+    window.clearTimeout(timeoutRef.current);
 
-    return () => clearTimeout(handler);
-  }, [value, onSearch]);
+    timeoutRef.current = window.setTimeout(async () => {
+      try {
+        setLoading(true);
+        const res = await fetchMoviesApi(value, 1);
+        setSuggestions(res.movies);
+      } catch {
+        setSuggestions([]);
+      } finally {
+        setLoading(false);
+      }
+    }, 400);
+
+    return () => window.clearTimeout(timeoutRef.current);
+  }, [value]);
+
+  const handleSelect = (title: string) => {
+    setValue(title);
+    setSuggestions([]);
+    onSearch(title);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearch(value);
+      setSuggestions([]);
+    }
+  };
 
   return (
-    <input
-      type="text"
-      placeholder="Search movies..."
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      className="w-full mb-4 p-2 border rounded"
-    />
+    <div ref={wrapperRef} className="relative mb-4">
+      <input
+        type="text"
+        placeholder="Search movies..."
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleKeyDown}
+        className="w-full p-2 border rounded"
+      />
+
+      <SearchSuggestions
+        items={suggestions}
+        loading={loading}
+        onSelect={handleSelect}
+      />
+    </div>
   );
 };

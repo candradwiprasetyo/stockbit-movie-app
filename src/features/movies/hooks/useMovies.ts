@@ -36,12 +36,10 @@ export const useMovies = () => {
   );
 
   const search = (value: string) => {
-    const nextKeyword = value || "movie";
+    const normalizedKeyword = value.trim() || "movie";
 
-    if (nextKeyword === keyword) return;
-
-    dispatch(setKeyword(nextKeyword));
-    dispatch(fetchMovies({ keyword: nextKeyword, page: 1 }));
+    dispatch(setKeyword(normalizedKeyword));
+    dispatch(fetchMovies({ keyword: normalizedKeyword, page: 1 }));
   };
 
   return {

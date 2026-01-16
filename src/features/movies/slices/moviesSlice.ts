@@ -2,13 +2,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { MoviesState } from "../types/movie";
 import { fetchMoviesApi } from "../api/moviesApi";
 
+export const DEFAULT_KEYWORD = "movie";
+
 const initialState: MoviesState = {
   movies: [],
   loading: false,
   error: null,
   page: 1,
   hasMore: true,
-  keyword: "movie",
+  keyword: DEFAULT_KEYWORD,
 };
 
 export const fetchMovies = createAsyncThunk(
