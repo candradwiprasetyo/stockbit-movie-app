@@ -19,7 +19,7 @@ export const SearchInput = ({ onSearch }: Props) => {
   } = useMovieSearch({ onSearch });
 
   return (
-    <div className="sticky left-0 w-full max-w-7xl mx-auto top-4">
+    <div className="sticky top-0 left-0 w-full max-w-8xl mx-auto z-50">
       <div ref={wrapperRef} className="relative mb-4">
         <Search
           size={22}
@@ -29,21 +29,16 @@ export const SearchInput = ({ onSearch }: Props) => {
         <TextField
           placeholder="Search movies..."
           value={value}
-          className="w-full rounded-full border-none pt-4 pb-5 px-14 text-2xl font-semibold bg-gray-900 relative z-20 focus:border-none"
+          className="w-full rounded-b-[26px] rounded-t-none border-none pt-4 pb-5 px-14 text-2xl font-semibold bg-gray-900 z-20"
           onChange={(e) => setValue(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleSubmit();
-            }
-          }}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
 
         {value && (
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200 transition cursor-pointer z-30"
-            aria-label="Clear search"
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-30"
           >
             <X size={22} />
           </button>

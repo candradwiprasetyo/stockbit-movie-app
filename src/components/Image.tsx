@@ -1,35 +1,39 @@
 import { useState } from "react";
+import { ImageOff } from "lucide-react";
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  fallbackSrc?: string;
   className?: string;
-  width?: number | string;
-  height?: number | string;
 }
 
-export const Image = ({
-  src,
-  alt,
-  fallbackSrc = "/images/fallback-poster.png",
-  className,
-  ...props
-}: ImageProps) => {
-  const [imgSrc, setImgSrc] = useState(src);
+export const Image = ({ src, alt, className, ...props }: ImageProps) => {
+  const [hasError, setHasError] = useState(false);
 
-  const handleError = () => {
-    if (imgSrc !== fallbackSrc) {
-      setImgSrc(fallbackSrc);
-    }
-  };
+  if (hasError || !src || src === "N/A") {
+    return (
+      <div
+        className={`
+          flex items-center justify-center
+          bg-gray-800 text-gray-400
+          ${className}
+        `}
+        aria-label="Image not available"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <ImageOff size={32} />
+          <span className="text-xs">No Image Found</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <img
-      src={imgSrc}
+      src={src}
       alt={alt}
-      onError={handleError}
       loading="lazy"
+      onError={() => setHasError(true)}
       className={className}
       {...props}
     />

@@ -22,7 +22,7 @@ export const MovieCard = ({ movie }: Props) => {
   return (
     <>
       <Card className="p-0 bg-gray-900 overflow-hidden">
-        <div className="relative">
+        <div className="relative z-0">
           <Image
             src={movie.Poster}
             alt={movie.Title}
@@ -34,7 +34,7 @@ export const MovieCard = ({ movie }: Props) => {
             "
             onClick={() => setIsOpen(true)}
           />
-          <div className="bg-gradient-to-t from-gray-900 to-transparent h-32 bottom-0 absolute left-0 right-0 pointer-events-none" />
+          <div className="bg-gradient-to-t from-gray-900 to-transparent h-32 bottom-0 absolute left-0 right-0 pointer-events-none z-0" />
         </div>
         <div className="p-4">
           <Link to={`/movies/${movie.imdbID}`}>

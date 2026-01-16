@@ -9,7 +9,7 @@ export const SearchSuggestions = ({ items, onSelect }: Props) => {
   if (!items.length) return null;
 
   return (
-    <ul className="absolute z-10 w-full bg-gray-900 rounded-b-[32px] shadow py-8 top-10">
+    <ul className="absolute z-50 w-full bg-gray-900 rounded-b-[32px] shadow py-8 top-12">
       {items.slice(0, 5).map((movie) => (
         <li
           key={movie.imdbID}
