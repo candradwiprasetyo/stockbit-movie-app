@@ -3,6 +3,7 @@ import { fetchMoviesApi } from "../api/moviesApi";
 import type { Movie } from "../types/movie";
 import { SearchSuggestions } from "./SearchSuggestions";
 import { TextField } from "@/components/TextField";
+import { Search, X } from "lucide-react";
 
 interface Props {
   onSearch: (value: string) => void;
@@ -67,10 +68,15 @@ export const SearchInput = ({ onSearch }: Props) => {
 
   return (
     <div ref={wrapperRef} className="relative mb-4">
+      <Search
+        size={22}
+        className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"
+      />
+
       <TextField
         placeholder="Search movies..."
         value={value}
-        className="w-full rounded-full border border-gray-500 py-4 px-6 text-2xl font-semibold"
+        className="w-full rounded-full border border-gray-500 py-4 px-14 text-2xl font-semibold"
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
@@ -87,7 +93,7 @@ export const SearchInput = ({ onSearch }: Props) => {
           className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200 transition cursor-pointer text-2xl"
           aria-label="Clear search"
         >
-          ✕
+          <X size={22} />
         </button>
       )}
 
