@@ -1,37 +1,26 @@
-import { MovieCard } from "../components/MovieCard";
 import { SearchInput } from "../components/SearchInput";
 import { useMovies } from "../hooks/useMovies";
+import { MovieList } from "../components/MovieList";
+import { NotFound } from "@/components/NotFound";
+import { Loading } from "@/components/Loading";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 export const MoviesPage = () => {
   const { movies, loading, error, lastMovieRef, search, keyword } = useMovies();
 
   return (
-    <>
+    <div className="max-w-7xl mx-auto p-6">
       <SearchInput onSearch={search} />
 
-      {error && <p className="text-center text-red-500 mb-4">{error}</p>}
+      {error && <ErrorMessage message={error} />}
 
       {!loading && movies.length === 0 && (
-        <p className="text-center text-gray-500 mt-8">
-          No movies found for "<strong>{keyword}</strong>"
-        </p>
+        <NotFound message="No movies found" keyword={keyword} />
       )}
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-        {movies.map((movie, index) => {
-          if (index === movies.length - 1) {
-            return (
-              <div ref={lastMovieRef} key={movie.imdbID}>
-                <MovieCard movie={movie} />
-              </div>
-            );
-          }
+      <MovieList movies={movies} lastItemRef={lastMovieRef} />
 
-          return <MovieCard key={movie.imdbID} movie={movie} />;
-        })}
-      </div>
-
-      {loading && <p className="text-center mt-4 text-gray-500">Loading...</p>}
-    </>
+      {loading && <Loading />}
+    </div>
   );
 };
