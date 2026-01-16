@@ -1,16 +1,11 @@
 import { axiosInstance } from "@/services/axios";
-import type { MovieDetail } from "../types/movieDetail";
-
-interface MovieDetailResponse extends MovieDetail {
-  Response: "True" | "False";
-  Error?: string;
-}
+import type { MovieDetail, MovieDetailResponse } from "../types/movieDetail";
 
 export const fetchMovieDetailApi = async (
-  imdbID: string
+  movieId: string
 ): Promise<MovieDetail> => {
   const response = await axiosInstance.get<MovieDetailResponse>("", {
-    params: { i: imdbID },
+    params: { i: movieId },
   });
 
   if (response.data.Response === "False") {

@@ -27,3 +27,8 @@ export interface MovieDetail {
   Production: string;
   Website: string;
 }
+
+export interface MovieDetailResponse extends MovieDetail {
+  Response: "True" | "False";
+  Error?: string;
+}

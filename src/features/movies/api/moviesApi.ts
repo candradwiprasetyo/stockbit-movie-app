@@ -1,18 +1,11 @@
 import { axiosInstance } from "../../../services/axios";
-import type { Movie } from "../types/movie";
-
-interface MoviesResponse {
-  Search: Movie[];
-  totalResults: string;
-  Response: "True" | "False";
-  Error?: string;
-}
+import type { Movie, MovieResponse } from "../types/movie";
 
 export const fetchMoviesApi = async (
   keyword: string,
   page: number
 ): Promise<{ movies: Movie[]; totalResults: number }> => {
-  const response = await axiosInstance.get<MoviesResponse>("", {
+  const response = await axiosInstance.get<MovieResponse>("", {
     params: {
       s: keyword,
       page,

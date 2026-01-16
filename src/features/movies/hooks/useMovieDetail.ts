@@ -4,21 +4,21 @@ import { fetchMovieDetail, clearMovieDetail } from "../slices/movieDetailSlice";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 
 export const useMovieDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const { movieId } = useParams<{ movieId: string }>();
   const dispatch = useAppDispatch();
   const { movie, loading, error } = useAppSelector(
     (state) => state.movieDetail
   );
 
   useEffect(() => {
-    if (id) {
-      dispatch(fetchMovieDetail(id));
+    if (movieId) {
+      dispatch(fetchMovieDetail(movieId));
     }
 
     return () => {
       dispatch(clearMovieDetail());
     };
-  }, [dispatch, id]);
+  }, [dispatch, movieId]);
 
   return { movie, loading, error };
 };

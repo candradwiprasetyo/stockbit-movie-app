@@ -16,8 +16,8 @@ const initialState: MovieDetailState = {
 
 export const fetchMovieDetail = createAsyncThunk(
   "movieDetail/fetch",
-  async (imdbID: string) => {
-    return await fetchMovieDetailApi(imdbID);
+  async (movieId: string) => {
+    return await fetchMovieDetailApi(movieId);
   }
 );
 
