@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-interface LabelProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface LabelProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?:
     | "gray"
     | "blue"

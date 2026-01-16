@@ -1,9 +1,6 @@
 import React from "react";
 import type { Rating } from "../../types/movieDetail";
-import { Star } from "lucide-react";
-import { RottenIcon } from "@/assets/icons/Rotten";
-import { ImdbIcon } from "@/assets/icons/Imdb";
-import { MetacriticIcon } from "@/assets/icons/Metametric";
+import { getRatingIcon } from "../../constants/ratingIcons";
 
 interface MovieRatingsProps {
   ratings?: Rating[];
@@ -11,19 +8,6 @@ interface MovieRatingsProps {
 
 export const MovieRatings: React.FC<MovieRatingsProps> = ({ ratings }) => {
   if (!ratings || ratings.length === 0) return null;
-
-  const getRatingIcon = (source: string) => {
-    switch (source.toLowerCase()) {
-      case "internet movie database":
-        return <ImdbIcon className="text-2xl" />;
-      case "rotten tomatoes":
-        return <RottenIcon className="text-lg" />;
-      case "metacritic":
-        return <MetacriticIcon className="text-lg" />;
-      default:
-        return <Star size={16} className="text-gray-400" />;
-    }
-  };
 
   return (
     <div className="mt-6">

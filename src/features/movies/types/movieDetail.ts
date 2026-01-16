@@ -34,3 +34,12 @@ export interface MovieDetailResponse extends MovieDetail {
   Response: "True" | "False";
   Error?: string;
 }
+
+export type LabelVariant =
+  | "gray"
+  | "green"
+  | "blue"
+  | "yellow"
+  | "red"
+  | "purple"
+  | "orange";

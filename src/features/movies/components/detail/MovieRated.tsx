@@ -1,5 +1,6 @@
 import React from "react";
 import { Label } from "@/components/Label";
+import { ratingColors } from "../../constants/ratingColors";
 
 interface MovieRatedProps {
   rated?: string;
@@ -8,33 +9,7 @@ interface MovieRatedProps {
 export const MovieRated: React.FC<MovieRatedProps> = ({ rated }) => {
   if (!rated) return null;
 
-  let variant: Parameters<typeof Label>[0]["variant"] = "gray";
-
-  switch (rated.toUpperCase()) {
-    case "G":
-      variant = "green";
-      break;
-    case "PG":
-      variant = "blue";
-      break;
-    case "PG-13":
-      variant = "yellow";
-      break;
-    case "R":
-      variant = "red";
-      break;
-    case "NC-17":
-      variant = "purple";
-      break;
-    case "TV-MA":
-      variant = "orange";
-      break;
-    case "TV-PG":
-      variant = "yellow";
-      break;
-    default:
-      variant = "gray";
-  }
+  const variant = ratingColors[rated.toUpperCase()] ?? "gray";
 
   return <Label variant={variant}>{rated}</Label>;
 };

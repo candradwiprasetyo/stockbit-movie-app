@@ -1,5 +1,6 @@
 import { Modal } from "@/components/Modal";
-import { X } from "lucide-react";
+import { CloseButton } from "@/components/CloseButton";
+import { Image } from "@/components/Image";
 
 interface Props {
   poster: string;
@@ -11,17 +12,15 @@ export const MoviePosterModal = ({ poster, title, onClose }: Props) => {
   return (
     <Modal isOpen={true} onClose={onClose}>
       <div className="relative max-w-xl">
-        <button
+        <CloseButton
           onClick={onClose}
-          className="absolute -top-3 -right-3 rounded-full w-8 h-8 shadow flex items-center justify-center cursor-pointer bg-gray-600"
-        >
-          <X />
-        </button>
+          className="absolute -top-3 -right-3 rounded-full w-8 h-8 shadow bg-gray-600"
+        />
 
-        <img
+        <Image
           src={poster}
           alt={title}
-          className="rounded shadow-lg max-h-[100vh]"
+          className="rounded-xl shadow-lg max-h-[100vh]"
         />
       </div>
     </Modal>
