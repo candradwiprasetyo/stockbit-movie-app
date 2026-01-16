@@ -1,7 +1,7 @@
 import { TextField } from "@/components/TextField";
 import { Search, X } from "lucide-react";
 import { SearchSuggestions } from "./SearchSuggestions";
-import { useMovieSearch } from "../hooks/useMovieSearch";
+import { useMovieSearch } from "../../hooks/useMovieSearch";
 
 interface Props {
   onSearch: (value: string) => void;
@@ -38,7 +38,7 @@ export const SearchInput = ({ onSearch }: Props) => {
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-30"
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-30 cursor-pointer"
           >
             <X size={22} />
           </button>

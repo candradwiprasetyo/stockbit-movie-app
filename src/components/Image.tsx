@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ImageOff } from "lucide-react";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -13,11 +15,12 @@ export const Image = ({ src, alt, className, ...props }: ImageProps) => {
   if (hasError || !src || src === "N/A") {
     return (
       <div
-        className={`
-          flex items-center justify-center
-          bg-gray-800 text-gray-400
-          ${className}
-        `}
+        className={twMerge(
+          clsx(
+            "flex items-center justify-center text-center bg-gray-900 text-gray-400 inset-0 w-full h-full opacity-50",
+            className
+          )
+        )}
         aria-label="Image not available"
       >
         <div className="flex flex-col items-center gap-2">

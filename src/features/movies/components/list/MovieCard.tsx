@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import type { Movie } from "../types/movie";
+import type { Movie } from "../../types/movie";
 import Card from "@/components/Card";
 import { MoviePosterModal } from "./MoviePosterModal";
 import { Image } from "@/components/Image";
+import { Button } from "@/components/Button";
 
 interface Props {
   movie: Movie;
@@ -21,7 +22,7 @@ export const MovieCard = ({ movie }: Props) => {
 
   return (
     <>
-      <Card className="p-0 bg-gray-900 overflow-hidden">
+      <Card className="p-0 bg-gray-900 overflow-hidden relative group">
         <div className="relative z-0">
           <Image
             src={movie.Poster}
@@ -34,9 +35,19 @@ export const MovieCard = ({ movie }: Props) => {
             "
             onClick={() => setIsOpen(true)}
           />
+
           <div className="bg-gradient-to-t from-gray-900 to-transparent h-32 bottom-0 absolute left-0 right-0 pointer-events-none z-0" />
         </div>
-        <div className="p-4">
+
+        <div className="absolute left-0 right-0 opacity-0 top-[40%] transition-opacity duration-300 z-10 group-hover:opacity-100 mx-auto text-center">
+          <Link to={`/movies/${movie.imdbID}`}>
+            <Button variant="primary" className="text-sm mx-auto">
+              View Movie
+            </Button>
+          </Link>
+        </div>
+
+        <div className="p-4 relative">
           <Link to={`/movies/${movie.imdbID}`}>
             <h3 className="font-semibold hover:underline line-clamp-1">
               {movie.Title}

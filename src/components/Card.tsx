@@ -9,7 +9,7 @@ interface CardProps {
 
 export const Card = ({ children, className }: CardProps) => {
   return (
-    <div className={twMerge(clsx("rounded-lg shadow bg-white p-3", className))}>
+    <div className={twMerge(clsx("rounded-xl shadow bg-white p-3", className))}>
       {children}
     </div>
   );

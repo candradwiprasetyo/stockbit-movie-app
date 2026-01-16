@@ -1,11 +1,13 @@
 import { useMovieDetail } from "../hooks/useMovieDetail";
-import { MovieDetailView } from "../components/MovieDetail";
+import { MovieDetailView } from "../components/detail/MovieDetail";
+import { Loading } from "@/components/Loading";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 export const MovieDetailPage = () => {
   const { movie, loading, error } = useMovieDetail();
 
-  if (loading) return <p className="text-center">Loading...</p>;
-  if (error) return <p className="text-center text-red-500">{error}</p>;
+  if (loading) return <Loading />;
+  if (error) return <ErrorMessage message={error} />;
   if (!movie) return null;
 
   return <MovieDetailView movie={movie} />;

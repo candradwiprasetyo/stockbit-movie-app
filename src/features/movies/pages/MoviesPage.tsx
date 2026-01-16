@@ -1,6 +1,6 @@
-import { SearchInput } from "../components/SearchInput";
+import { SearchInput } from "../components/list/SearchInput";
 import { useMovies } from "../hooks/useMovies";
-import { MovieList } from "../components/MovieList";
+import { MovieList } from "../components/list/MovieList";
 import { NotFound } from "@/components/NotFound";
 import { Loading } from "@/components/Loading";
 import { ErrorMessage } from "@/components/ErrorMessage";
