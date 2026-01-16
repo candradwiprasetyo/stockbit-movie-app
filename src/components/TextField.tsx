@@ -14,9 +14,16 @@ export const TextField = ({ label, error, ...props }: Props) => {
 
       <input
         {...props}
-        className={`p-2 border rounded ${error ? "border-red-500" : ""} ${
-          props.className ?? ""
-        }`}
+        className={`
+          p-2
+          rounded
+          border-none
+          outline-none
+          focus:outline-none
+          focus:ring-0
+          ${error ? "border border-red-500" : ""}
+          ${props.className ?? ""}
+        `}
       />
 
       {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
