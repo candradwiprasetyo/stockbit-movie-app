@@ -8,14 +8,11 @@ export const useMovies = () => {
     (state) => state.movies
   );
 
-  const hasFetched = useRef(false);
-
   useEffect(() => {
-    if (hasFetched.current) return;
-    hasFetched.current = true;
+    if (movies.length > 0) return;
 
     dispatch(fetchMovies({ keyword, page: 1 }));
-  }, [dispatch, keyword]);
+  }, [dispatch, keyword, movies]);
 
   const observer = useRef<IntersectionObserver | null>(null);
 

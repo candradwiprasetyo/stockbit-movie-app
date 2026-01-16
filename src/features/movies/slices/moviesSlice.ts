@@ -39,14 +39,18 @@ const moviesSlice = createSlice({
       })
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.loading = false;
-        state.movies =
-          state.page === 1
-            ? action.payload.movies
-            : [...state.movies, ...action.payload.movies];
+
+        if (action.meta.arg.page === 1) {
+          state.movies = action.payload.movies;
+        } else {
+          const newMovies = action.payload.movies.filter(
+            (nm) => !state.movies.find((m) => m.imdbID === nm.imdbID)
+          );
+          state.movies = [...state.movies, ...newMovies];
+        }
 
         state.hasMore = state.movies.length < action.payload.totalResults;
-
-        state.page += 1;
+        state.page = action.meta.arg.page + 1;
       })
       .addCase(fetchMovies.rejected, (state, action) => {
         state.loading = false;

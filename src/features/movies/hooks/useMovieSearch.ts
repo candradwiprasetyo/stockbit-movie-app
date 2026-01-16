@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { fetchMoviesApi } from "../api/moviesApi";
 import type { Movie } from "../types/movie";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store";
 
 interface UseMovieSearchProps {
   onSearch: (value: string) => void;
@@ -11,7 +13,10 @@ export const useMovieSearch = ({
   onSearch,
   debounceMs = 400,
 }: UseMovieSearchProps) => {
-  const [value, setValue] = useState("");
+  const lastKeyword = useSelector((state: RootState) => state.movies.keyword);
+  const [value, setValue] = useState(
+    lastKeyword === "movie" ? "" : lastKeyword
+  );
   const [suggestions, setSuggestions] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +38,7 @@ export const useMovieSearch = ({
   }, []);
 
   useEffect(() => {
-    if (!value.trim()) {
+    if (!value.trim() || value === lastKeyword) {
       setSuggestions([]);
       return;
     }
@@ -53,7 +58,7 @@ export const useMovieSearch = ({
     }, debounceMs);
 
     return () => clearTimeout(timeoutRef.current);
-  }, [value, debounceMs]);
+  }, [value, debounceMs, lastKeyword]);
 
   const handleSelect = (title: string) => {
     setValue(title);
