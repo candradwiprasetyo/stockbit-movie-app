@@ -28,7 +28,7 @@ export const MovieCard = ({ movie }: Props) => {
             src={movie.Poster}
             alt={movie.Title}
             className="
-              w-full h-72 object-cover rounded-t-lg cursor-pointer
+              w-full h-48 md:h-72 object-cover rounded-t-lg cursor-pointer
               transition-transform duration-500 ease-out
               origin-bottom
               hover:scale-110
@@ -49,7 +49,7 @@ export const MovieCard = ({ movie }: Props) => {
 
         <div className="p-4 relative">
           <Link to={`/movies/${movie.imdbID}`}>
-            <h3 className="font-semibold hover:underline line-clamp-1">
+            <h3 className="font-semibold text-sm md:text-base hover:underline line-clamp-1">
               {movie.Title}
             </h3>
             <p className="text-sm text-gray-500">{movie.Year}</p>
