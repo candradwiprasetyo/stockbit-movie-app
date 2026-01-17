@@ -13,15 +13,15 @@ export const MovieDetailView = ({ movie }: { movie: MovieDetail }) => {
 
   return (
     <MovieDetailBackground poster={movie.Poster}>
-      <div className="h-screen w-full flex">
-        <div className="flex-none p-10">
+      <div className="md:h-screen w-full md:flex">
+        <div className="flex-none p-0 md:p-10">
           <Image
             src={movie.Poster}
             alt={movie.Title}
-            className="rounded-2xl w-full h-full object-cover"
+            className="rounded-none md:rounded-2xl w-full h-full object-cover"
           />
         </div>
-        <div className="flex-grow overflow-y-auto p-10 pl-0 scrollbar-hidden">
+        <div className="flex-grow overflow-y-auto p-6 md:p-10 pl-6 md:pl-0 scrollbar-hidden">
           <MovieDetailHeader
             movie={{
               Title: movie.Title,
