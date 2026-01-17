@@ -1,75 +1,142 @@
-# stockbit-movie-app
+# Stockbit Movie App
 
-stockbit-movie-app
+A modern React + Redux Toolkit movie discovery app using the [OMDb API](http://www.omdbapi.com/).  
+Built with **React 19**, **TypeScript**, **TailwindCSS**, and tested with **Vitest**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img width="1862" height="855" alt="image" src="https://github.com/user-attachments/assets/91541bf4-f148-43ee-a6d3-34505144035b" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Search for movies with live suggestions
+- View detailed movie information
+- Infinite scroll / pagination for search results
+- Global state management with Redux Toolkit
+- Reusable components and custom hooks
+- Fully typed with TypeScript
+- Unit tests with Vitest and coverage reports
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- **Frontend:** React 19, TypeScript, TailwindCSS
+- **State Management:** Redux Toolkit
+- **Routing:** React Router v7
+- **HTTP Client:** Axios
+- **Testing:** Vitest
+- **Build Tool:** Vite
+
+---
+
+## Project Structure
+
+```
+src/
+├─ api/               # API calls (mockable)
+├─ components/        # Reusable UI components
+├─ features/
+│  ├─ movies/
+│  │  ├─ components/  # Feature specific components
+│  │  ├─ hooks/       # Custom hooks
+│  │  ├─ slices/      # Redux slices
+│  │  └─ types/       # TypeScript interfaces
+├─ hooks/             # App wide custom hooks
+├─ services/          # Axios instance and global services
+└─ App.tsx            # Main app entry
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+## Getting Started
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+1. **Install dependencies**
+
+```bash
+npm install
 ```
+
+2. **Configure environment variables**
+
+Create a `.env` file at the root:
+
+```env
+VITE_OMDB_BASE_URL=https://www.omdbapi.com
+VITE_OMDB_API_KEY=YOUR_API_KEY
+```
+
+3. **Run development server**
+
+```bash
+npm run dev
+```
+
+4. **Build for production**
+
+```bash
+npm run build
+```
+
+5. **Run tests**
+
+```bash
+npm run test
+npm run test:coverage
+```
+
+---
+
+## Testing & Quality
+
+
+
+- All **global components**, **Redux slices**, and **custom hooks** are fully unit-tested
+- **Mocking** for external APIs ensures deterministic tests
+- Coverage reports generated via `vitest --coverage`
+- Designed for maintainability and scalability
+
+### Test Coverage
+
+This application achieves a coverage rate of ~96%, ensuring that nearly all execution component interactions are well tested.
+
+| File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **All files** | **96.52** | **94.36** | **96.36** | **96.32** | |
+| 📂 **components** | **100** | **100** | **100** | **100** | |
+| ↳ Button.tsx | 100 | 100 | 100 | 100 | |
+| ↳ Card.tsx | 100 | 100 | 100 | 100 | |
+| ↳ CloseButton.tsx | 100 | 100 | 100 | 100 | |
+| ↳ DetailItem.tsx | 100 | 100 | 100 | 100 | |
+| ↳ ErrorMessage.tsx | 100 | 100 | 100 | 100 | |
+| ↳ Image.tsx | 100 | 100 | 100 | 100 | |
+| ↳ Label.tsx | 100 | 100 | 100 | 100 | |
+| ↳ Loading.tsx | 100 | 100 | 100 | 100 | |
+| ↳ Modal.tsx | 100 | 100 | 100 | 100 | |
+| ↳ NotFound.tsx | 100 | 100 | 100 | 100 | |
+| ↳ TextField.tsx | 100 | 100 | 100 | 100 | |
+
+---
+
+## Conventions & Best Practices
+
+- **TypeScript-first approach**: all slices, API responses, and components are fully typed
+- **Hooks & reusable components** for cleaner abstraction
+- **Redux Toolkit** for standardized state management patterns
+- **TailwindCSS** with utility first design and `tailwind-merge` for class management
+
+---
+
+## Notes
+
+- API requests are handled via `axiosInstance` with default params and base URL configured
+- Custom hooks like `useMovieSearch` and `useMovieDetail` encapsulate state logic and side effects
+- `SearchInput`, `Loading`, and `NotFound` are global reusable components
+
+---
+
