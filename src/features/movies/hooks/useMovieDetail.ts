@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetail, clearMovieDetail } from "../slices/movieDetailSlice";
-import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHooks";
 
 export const useMovieDetail = () => {
   const { movieId } = useParams<{ movieId: string }>();

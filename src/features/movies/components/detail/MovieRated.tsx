@@ -1,5 +1,5 @@
 import React from "react";
-import { Label } from "@/components/Label";
+import { Label } from "../../../../components/Label";
 import { ratingColors } from "../../constants/ratingColors";
 
 interface MovieRatedProps {

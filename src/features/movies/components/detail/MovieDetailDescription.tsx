@@ -1,4 +1,4 @@
-import { DetailItem } from "@/components/DetailItem";
+import { DetailItem } from "../../../../components/DetailItem";
 import { movieDetailsList } from "./MovieDetailItem";
 import type { MovieDetail } from "../../types/movieDetail";
 

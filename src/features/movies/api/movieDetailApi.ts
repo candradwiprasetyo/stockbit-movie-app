@@ -1,4 +1,4 @@
-import { axiosInstance } from "@/services/axios";
+import { axiosInstance } from "../../../services/axios";
 import type { MovieDetail, MovieDetailResponse } from "../types/movieDetail";
 
 export const fetchMovieDetailApi = async (

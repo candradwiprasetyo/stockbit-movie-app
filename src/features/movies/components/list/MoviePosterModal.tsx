@@ -1,6 +1,6 @@
-import { Modal } from "@/components/Modal";
-import { CloseButton } from "@/components/CloseButton";
-import { Image } from "@/components/Image";
+import { Modal } from "../../../../components/Modal";
+import { CloseButton } from "../../../../components/CloseButton";
+import { Image } from "../../../../components/Image";
 
 interface Props {
   poster: string;

@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
-import { RottenIcon } from "@/assets/icons/Rotten";
-import { ImdbIcon } from "@/assets/icons/Imdb";
-import { MetacriticIcon } from "@/assets/icons/Metametric";
+import { RottenIcon } from "../../../assets/icons/Rotten";
+import { ImdbIcon } from "../../../assets/icons/Imdb";
+import { MetacriticIcon } from "../../../assets/icons/Metametric";
 import React from "react";
 
 export const ratingIcons: Record<string, React.ReactNode> = {

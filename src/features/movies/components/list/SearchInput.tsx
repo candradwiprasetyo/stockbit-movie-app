@@ -1,8 +1,8 @@
-import { TextField } from "@/components/TextField";
+import { TextField } from "../../../../components/TextField";
 import { Search } from "lucide-react";
 import { SearchSuggestions } from "./SearchSuggestions";
 import { useMovieSearch } from "../../hooks/useMovieSearch";
-import { CloseButton } from "@/components/CloseButton";
+import { CloseButton } from "../../../..//components/CloseButton";
 
 interface Props {
   onSearch: (value: string) => void;

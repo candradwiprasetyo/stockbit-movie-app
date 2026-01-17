@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1768611576521" clover="3.2.0">
+  <project timestamp="1768611576521" name="All files">
+    <metrics statements="136" coveredstatements="131" conditionals="71" coveredconditionals="67" methods="55" coveredmethods="53" elements="262" coveredelements="251" complexity="0" loc="136" ncloc="136" packages="8" files="32" classes="32"/>
+    <package name="assets.icons">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Imdb.tsx" path="D:\projects\stockbit-movie-app\src\assets\icons\Imdb.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="Metametric.tsx" path="D:\projects\stockbit-movie-app\src\assets\icons\Metametric.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="Rotten.tsx" path="D:\projects\stockbit-movie-app\src\assets\icons\Rotten.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components">
+      <metrics statements="37" coveredstatements="37" conditionals="33" coveredconditionals="33" methods="14" coveredmethods="14"/>
+      <file name="Button.tsx" path="D:\projects\stockbit-movie-app\src\components\Button.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
+        <line num="26" count="15" type="stmt"/>
+      </file>
+      <file name="Card.tsx" path="D:\projects\stockbit-movie-app\src\components\Card.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+      </file>
+      <file name="CloseButton.tsx" path="D:\projects\stockbit-movie-app\src\components\CloseButton.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+      </file>
+      <file name="DetailItem.tsx" path="D:\projects\stockbit-movie-app\src\components\DetailItem.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="14" count="88" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="86" type="stmt"/>
+      </file>
+      <file name="ErrorMessage.tsx" path="D:\projects\stockbit-movie-app\src\components\ErrorMessage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+      </file>
+      <file name="Image.tsx" path="D:\projects\stockbit-movie-app\src\components\Image.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="15" count="19" type="cond" truecount="5" falsecount="0"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="34" count="15" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+      <file name="Label.tsx" path="D:\projects\stockbit-movie-app\src\components\Label.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="25" count="21" type="stmt"/>
+        <line num="27" count="21" type="stmt"/>
+        <line num="40" count="21" type="stmt"/>
+      </file>
+      <file name="Loading.tsx" path="D:\projects\stockbit-movie-app\src\components\Loading.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="4" type="stmt"/>
+      </file>
+      <file name="Modal.tsx" path="D:\projects\stockbit-movie-app\src\components\Modal.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="7" type="stmt"/>
+      </file>
+      <file name="NotFound.tsx" path="D:\projects\stockbit-movie-app\src\components\NotFound.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="4" type="stmt"/>
+      </file>
+      <file name="TextField.tsx" path="D:\projects\stockbit-movie-app\src\components\TextField.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.movies.api">
+      <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="moviesApi.ts" path="D:\projects\stockbit-movie-app\src\features\movies\api\moviesApi.ts">
+        <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.movies.components.detail">
+      <metrics statements="24" coveredstatements="24" conditionals="18" coveredconditionals="18" methods="11" coveredmethods="11"/>
+      <file name="MovieDetail.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetail.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+      </file>
+      <file name="MovieDetailBackground.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetailBackground.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="8" type="stmt"/>
+      </file>
+      <file name="MovieDetailDescription.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetailDescription.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="12" count="84" type="stmt"/>
+      </file>
+      <file name="MovieDetailHeader.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetailHeader.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+      </file>
+      <file name="MovieDetailItem.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetailItem.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="10" type="stmt"/>
+      </file>
+      <file name="MovieDetailPlot.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieDetailPlot.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="5" type="stmt"/>
+      </file>
+      <file name="MovieRated.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieRated.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="12" type="stmt"/>
+      </file>
+      <file name="MovieRating.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\detail\MovieRating.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="7" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.movies.components.list">
+      <metrics statements="22" coveredstatements="21" conditionals="10" coveredconditionals="10" methods="11" coveredmethods="10"/>
+      <file name="MovieCard.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\list\MovieCard.tsx">
+        <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="4"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+      </file>
+      <file name="MovieList.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\list\MovieList.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+      </file>
+      <file name="MoviePosterModal.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\list\MoviePosterModal.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+      </file>
+      <file name="SearchSuggestions.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\components\list\SearchSuggestions.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.movies.constants">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="ratingColors.ts" path="D:\projects\stockbit-movie-app\src\features\movies\constants\ratingColors.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="ratingIcons.tsx" path="D:\projects\stockbit-movie-app\src\features\movies\constants\ratingIcons.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="features.movies.slices">
+      <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="4" methods="14" coveredmethods="14"/>
+      <file name="movieDetailSlice.ts" path="D:\projects\stockbit-movie-app\src\features\movies\slices\movieDetailSlice.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="1" type="stmt"/>
+      </file>
+      <file name="moviesSlice.ts" path="D:\projects\stockbit-movie-app\src\features\movies\slices\moviesSlice.ts">
+        <metrics statements="23" coveredstatements="23" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="62" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="axios.ts" path="D:\projects\stockbit-movie-app\src\services\axios.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

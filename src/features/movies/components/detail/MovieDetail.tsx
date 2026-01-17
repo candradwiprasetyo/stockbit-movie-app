@@ -1,7 +1,7 @@
 import type { MovieDetail } from "../../types/movieDetail";
 import { useNavigate } from "react-router-dom";
-import { Image } from "@/components/Image";
-import { Button } from "@/components/Button";
+import { Image } from "../../../../components/Image";
+import { Button } from "../../../../components/Button";
 import { MovieDetailBackground } from "./MovieDetailBackground";
 import { MovieDetailHeader } from "./MovieDetailHeader";
 import { MovieRatings } from "./MovieRating";

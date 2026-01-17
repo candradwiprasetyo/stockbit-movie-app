@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import type { Movie } from "../../types/movie";
-import Card from "@/components/Card";
+import Card from "../../../../components/Card";
 import { MoviePosterModal } from "./MoviePosterModal";
-import { Image } from "@/components/Image";
-import { Button } from "@/components/Button";
+import { Image } from "../../../../components/Image";
+import { Button } from "../../../../components/Button";
 
 interface Props {
   movie: Movie;
