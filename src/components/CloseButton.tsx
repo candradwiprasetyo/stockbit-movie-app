@@ -11,6 +11,7 @@ export const CloseButton = ({ onClick, className }: CloseButtonProps) => {
       type="button"
       onClick={onClick}
       className={`absolute  z-30 cursor-pointer ${className ?? ""}`}
+      aria-label="Close"
     >
       <X size={22} className="mx-auto" />
     </button>
