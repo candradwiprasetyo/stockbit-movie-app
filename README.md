@@ -3,6 +3,8 @@
 A modern React + Redux Toolkit movie discovery app using the [OMDb API](http://www.omdbapi.com/).  
 Built with **React 19**, **TypeScript**, **TailwindCSS**, and tested with **Vitest**.
 
+Live URL: https://stockbit-movie-app.vercel.app/
+
 ---
 
 ## Preview
