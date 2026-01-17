@@ -39,7 +39,7 @@ export const MovieCard = ({ movie }: Props) => {
           <div className="bg-gradient-to-t from-gray-900 to-transparent h-32 bottom-0 absolute left-0 right-0 pointer-events-none z-0" />
         </div>
 
-        <div className="absolute left-0 right-0 opacity-0 top-[40%] transition-opacity duration-300 z-10 group-hover:opacity-100 mx-auto text-center">
+        <div className="hidden md:inline absolute left-0 right-0 opacity-0 top-[40%] transition-opacity duration-300 z-10 group-hover:opacity-100 mx-auto text-center">
           <Link to={`/movies/${movie.imdbID}`}>
             <Button variant="primary" className="text-sm mx-auto">
               View Movie

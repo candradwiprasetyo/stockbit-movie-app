@@ -9,10 +9,10 @@ export const useMovies = () => {
   );
 
   useEffect(() => {
-    if (movies.length > 0) return;
+    if (loading || movies.length > 0 || error) return;
 
     dispatch(fetchMovies({ keyword, page: 1 }));
-  }, [dispatch, keyword, movies]);
+  }, [dispatch, keyword, movies.length, loading, error]);
 
   const observer = useRef<IntersectionObserver | null>(null);
 
@@ -34,9 +34,7 @@ export const useMovies = () => {
 
   const search = (value: string) => {
     const normalizedKeyword = value.trim() || "movie";
-
     dispatch(setKeyword(normalizedKeyword));
-    dispatch(fetchMovies({ keyword: normalizedKeyword, page: 1 }));
   };
 
   return {

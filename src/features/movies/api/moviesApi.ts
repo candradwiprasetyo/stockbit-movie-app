@@ -13,10 +13,7 @@ export const fetchMoviesApi = async (
   });
 
   if (response.data.Response === "False") {
-    return {
-      movies: [],
-      totalResults: 0,
-    };
+    throw new Error(response.data.Error || "Movie not found!");
   }
 
   return {

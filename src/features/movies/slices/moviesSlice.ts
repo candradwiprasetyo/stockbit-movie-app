@@ -29,6 +29,7 @@ const moviesSlice = createSlice({
       state.page = 1;
       state.movies = [];
       state.hasMore = true;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {

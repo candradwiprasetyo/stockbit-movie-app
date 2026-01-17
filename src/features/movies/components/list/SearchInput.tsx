@@ -14,6 +14,7 @@ export const SearchInput = ({ onSearch }: Props) => {
     setValue,
     suggestions,
     wrapperRef,
+    loading,
     handleSelect,
     handleSubmit,
     handleClear,
@@ -35,12 +36,17 @@ export const SearchInput = ({ onSearch }: Props) => {
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
 
-        {value && (
-          <CloseButton
-            onClick={handleClear}
-            className="top-1/2 -translate-y-1/2 right-6"
-          />
-        )}
+        {value &&
+          (loading ? (
+            <div className="absolute right-6 top-6">
+              <div className="w-5 h-5 border-4 border-gray-300 border-t-gray-500 rounded-full animate-spin" />
+            </div>
+          ) : (
+            <CloseButton
+              onClick={handleClear}
+              className="top-1/2 -translate-y-1/2 right-6"
+            />
+          ))}
 
         <SearchSuggestions items={suggestions} onSelect={handleSelect} />
       </div>
